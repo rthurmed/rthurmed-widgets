@@ -1,0 +1,175 @@
+:root {
+  --color-text: #FFF;
+  --color-main: #333;
+  --color-darker: #222;
+  --color-lighter: #555;
+
+  --font-size: 16px;
+  --padding: 1.5em;
+  --rounding: 18px;
+  --rounding-more: 24px;
+  --rounding-less: 12px;
+
+  --size-component: 6em;
+  --size-field: 4em;
+  --size-btn: var(--size-component);
+  --size-toolbar: 9em;
+
+  --min-width: 16em;
+
+  --gap-small: 0.4em;
+  --gap-normal: var(--padding);
+
+  --animation-time: .3s;
+  --animation-ease: ease-out;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size);
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+body {
+  background-color: var(--color-darker);
+  min-height: 100vh;
+}
+
+.main {
+  padding: var(--gap-normal);
+}
+
+.main section {
+  padding-top: var(--gap-normal);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: var(--size-toolbar);
+
+  background-color: var(--color-main);
+}
+
+.footer.footer-transparent {
+  background-color: transparent;
+}
+
+.toolbar {
+  background-color: var(--color-main);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: var(--gap-normal);
+  padding: var(--gap-normal);
+  border-radius: var(--rounding);
+}
+
+body > .toolbar {
+  border-radius: 0;
+}
+
+.toolbar-vertical {
+  flex-direction: column;
+}
+
+/* FORM */
+
+.form .field {
+  padding-bottom: var(--padding);
+}
+
+.field {
+  display: flex;
+  flex-flow: column;
+  min-height: var(--size-component);
+  min-width: var(--min-width);
+}
+
+.field label {
+  display: block;
+  margin-bottom: var(--gap-small);
+}
+
+/* components */
+.field input,
+.field select,
+.btn,
+.panel {
+  display: block;
+  min-height: var(--size-field);
+  width: 100%;
+
+  background-color: var(--color-lighter);
+  border: 0px;
+
+  border-radius: var(--rounding);
+  padding: 0 var(--padding);
+}
+
+.panel,
+.btn {
+  background-color: var(--color-main);
+  padding: var(--padding);
+
+  min-height: var(--size-btn);
+  min-width: var(--size-btn);
+  width: initial;
+}
+
+.btn {
+  transition:
+    background-color var(--animation-time) ease-out,
+    border-radius var(--animation-time) ease-out;
+  
+  cursor: pointer;
+}
+
+.btn-highlighted,
+.btn:hover {
+  background-color: var(--color-lighter);
+}
+
+.btn-rounded {
+  border-radius: var(--size-btn);
+}
+
+.btn-rounded:hover {
+  border-radius: var(--rounding);
+}
+
+.field .btn {
+  width: 100%;
+}
+
+/* LAYOUTS */
+
+.layout-article {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.layout-article > .main {
+  flex-grow: 1;
+}
+
+.layout-article > .main article {
+  max-width: 600px;
+  margin: auto;
+}
