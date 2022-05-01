@@ -5,8 +5,14 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Rthurmed Widgets</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='styles/app.css'>
-  <link rel='stylesheet' type='text/css' media='screen' href='styles/calc.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../app.css'>
+  <style>
+    .calc-keypad {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: var(--gap-normal);
+    }
+  </style>
 </head>
 <body class="layout layout-article">
   <main class="main">
