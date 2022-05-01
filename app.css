@@ -169,12 +169,8 @@ body > .toolbar {
 .component-group {
   display: flex;
   width: 100%;
-  flex-flow: row;
-  justify-content: center;
-}
-
-.component-group.vertical {
   flex-flow: column;
+  justify-content: center;
 }
 
 .component-group > * {
@@ -182,19 +178,25 @@ body > .toolbar {
 }
 
 .component-group > *:first-child {
-  border-radius: var(--rounding) 0 0 var(--rounding);
-}
-
-.component-group > *:last-child {
-  border-radius: 0 var(--rounding) var(--rounding) 0;
-}
-
-.component-group.vertical > *:first-child {
   border-radius: var(--rounding) var(--rounding) 0 0;
 }
 
-.component-group.vertical > *:last-child {
+.component-group > *:last-child {
   border-radius: 0 0 var(--rounding) var(--rounding);
+}
+
+@media (min-width: 600px) {
+  .component-group.horizontal {
+    flex-flow: row;
+  }
+  
+  .component-group.horizontal > *:first-child {
+    border-radius: var(--rounding) 0 0 var(--rounding);
+  }
+  
+  .component-group.horizontal > *:last-child {
+    border-radius: 0 var(--rounding) var(--rounding) 0;
+  }
 }
 
 /* LAYOUTS */
